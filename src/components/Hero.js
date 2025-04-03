@@ -54,7 +54,7 @@ const Hero = () => {
       <ParticleBackground />
       <Container maxWidth="md" sx={{ textAlign: 'center', zIndex: 1 }}>
         <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 700 }}>
-          Hi, I'm Ashen Wishwa Geeth
+          Hi, I'm Ashen
         </Typography>
         
         <Box sx={{ 
