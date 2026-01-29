@@ -7,31 +7,31 @@ const projects = [
     title: 'Blood Donation Mobile App',
     description: 'Simplifies the donation process and boosts community engagement with easy account creation, profile management, and secure communication. It provides a seamless, responsive user experience while safeguarding data.',
     technologies: ['Flutter', 'Firebase'],
-    date: 'May 2024'
+   
   },
   {
     title: 'Online Doctor Schedule System',
     description: 'Doctors can efficiently manage schedules, view patient lists, and update profiles, while patients can find doctors, book appointments, and manage their profiles. The app ensures a smooth user experience, streamlining healthcare connections.',
     technologies: ['React.js', 'Spring Boot', 'MySQL', 'CSS'],
-    date: 'December 2024'
+ 
   },
   {
     title: 'School Administrative Software',
     description: 'A student management system for schools, enabling tasks like managing student data, marking attendance, managing classrooms, and generating reports or certificates. It streamlines administrative processes with efficient CRUD operations.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'PHP', 'MySQL'],
-    date: 'February 2024'
+   
   },
   {
     title: 'Machine Learning for Diabetes Onset Prediction',
     description: 'Predicts the onset of diabetes using algorithms like Decision Tree, KNN, SVM, and Random Forest. Involves data preprocessing, model training, and evaluation to achieve accurate results.',
     technologies: ['Python', 'Pandas', 'Decision Tree', 'KNN', 'SVM', 'Random Forest'],
-    date: 'March 2024'
+  
   },
   {
     title: 'Medical Appointment System with QR',
     description: 'Developed a system featuring QR code-based appointment scheduling, PDF generation, and attendance tracking. Java Swing provides the UI, enhancing healthcare efficiency.',
     technologies: ['Java', 'MySQL', 'Java Swing', 'JDBC', 'Eclipse IDE'],
-    date: 'March 2024'
+   
   }
 ];
 

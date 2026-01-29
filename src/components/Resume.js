@@ -37,7 +37,7 @@ const Resume = () => {
       company: 'Sri Lanka Telecom Head Office',
       year: '2025-2026',
       description: 'As a Software Developer Intern at Sri Lanka Telecom, I help design, code, and test software applications. I work with the team to improve system performance and fix issues, gaining practical experience with industry tools and processes.',
-      skills: ['Java', 'Spring Boot', 'SQL', 'Agile'],
+      skills: ['Node.js', 'react.js', 'SQL', 'Agile'],
       icon: '💻',
     },
   ];
