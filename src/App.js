@@ -9,6 +9,7 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Resume from './components/Resume';
 import theme from './theme';
+import ChatBot from "./components/ChatBot";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Projects />
         <Resume />
         <Contact />
+        <ChatBot />
       </Box>
     </ThemeProvider>
   );
