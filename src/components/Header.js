@@ -37,7 +37,7 @@ const Header = () => {
         <Container maxWidth="lg">
           <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 700 }}>
-              Ashen Wishwa Geeth
+              Ashen Wishwa Geeth Jayarathna
             </Typography>
             
             <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
