@@ -44,7 +44,8 @@ const Resume = () => {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/assets/resume.pdf';
+    const cvFileName = 'Ashen  Jayarathna G CV.pdf';
+    link.href = `${process.env.PUBLIC_URL}/assets/${encodeURIComponent(cvFileName)}`;
     link.download = 'AshenWishwaGeeth_Resume.pdf';
     document.body.appendChild(link);
     link.click();
