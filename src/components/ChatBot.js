@@ -15,24 +15,38 @@ import SendIcon from "@mui/icons-material/Send";
 // FAQ data
 const faq = {
   hello: "Hello! 👋 I'm Ashen's portfolio assistant. How can I help you?",
+
   name: "My name is Ashen Wishwa Geeth. I am a Full-Stack Software Developer who enjoys building modern web and mobile applications.",
+
   skills:
-    "Ashen's technical skills include React.js, React Native, Flutter, Expo, JavaScript, TypeScript, Java, Go (Gin), Spring Boot, HTML, CSS, and REST API development.",
+    "Ashen's technical skills include JavaScript, TypeScript, Java, Python, C, Go, React, Next.js, Zustand, HTML, CSS, Bootstrap, Tailwind CSS, React Native, Flutter, Node.js, Express.js, and Laravel.",
+
   technologies:
-    "Ashen works with many technologies including Firebase, Supabase (PostgreSQL), MySQL, SQLite, Git, GitHub, Java Swing, JDBC, and modern UI libraries like Material UI.",
+    "Ashen works with modern technologies such as React, Next.js, Node.js, Express.js, Laravel, React Native, Flutter, MySQL, MongoDB, Firebase, GitHub, Figma, Postman, and development tools like VS Code, NetBeans, and IntelliJ IDEA.",
+
   projects:
-    "Ashen has developed multiple full-stack and mobile projects including a Blood Donation Mobile App, Credit Management Mobile App, Online Doctor Schedule System, Medical Appointment System with QR, and a Role-Based Authentication System.",
+    "Ashen has developed several full-stack and mobile projects including a Blood Donation Mobile App, Credit Management Mobile App, Online Doctor Schedule System, Medical Appointment System with QR, and a Role-Based Authentication System.",
+
   mobile:
-    "Ashen has experience building mobile applications using Flutter, React Native, and Expo with backend services like Firebase and Supabase.",
+    "Ashen develops mobile applications using Flutter and React Native with backend services like Firebase and REST APIs.",
+
   backend:
-    "Ashen builds backend systems using Go (Gin), Spring Boot, REST APIs, and secure authentication systems using JWT.",
+    "Ashen builds backend systems using Node.js, Express.js, Laravel, and REST APIs, creating scalable and secure server-side applications.",
+
   database:
-    "Ashen has experience working with databases such as MySQL, SQLite, Firebase Firestore, and Supabase PostgreSQL.",
-  github: "You can view Ashen's projects on GitHub: https://github.com/AshenWishwaGeeth",
+    "Ashen has experience working with databases such as MySQL, MongoDB, and Firebase for storing and managing application data.",
+
+  tools:
+    "Ashen regularly works with development tools and platforms such as GitHub, Figma, Postman, VS Code, NetBeans, and IntelliJ IDEA.",
+
+  github:
+    "You can view Ashen's projects on GitHub: https://github.com/AshenWishwaGeeth",
+
   contact:
     "You can contact Ashen through the contact section of this portfolio or via LinkedIn and GitHub.",
+
   default:
-    "Sorry, I didn't understand that. Try asking about skills, technologies, projects, mobile apps, backend, database, or GitHub."
+    "Sorry, I didn't understand that. Try asking about skills, technologies, projects, mobile apps, backend, databases, tools, or GitHub."
 };
 
 // Button questions
