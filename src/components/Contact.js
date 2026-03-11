@@ -65,7 +65,7 @@ const Contact = () => {
         <Box 
             id="contact" 
             sx={{ 
-                py: 10, 
+                py: { xs: 7, sm: 8, md: 10 }, 
                 backgroundColor: theme.palette.background.paper,
                 position: 'relative',
                 overflow: 'hidden',
@@ -74,14 +74,14 @@ const Contact = () => {
                     position: 'absolute',
                     top: 0,
                     right: 0,
-                    width: '40%',
+                    width: { xs: '100%', md: '40%' },
                     height: '100%',
                     background: `linear-gradient(135deg, ${theme.palette.primary.light}10 0%, transparent 100%)`,
                     zIndex: 0
                 }
             }}
         >
-            <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+            <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1, px: { xs: 2, sm: 3 } }}>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -94,17 +94,17 @@ const Contact = () => {
                         align="center" 
                         gutterBottom 
                         sx={{ 
-                            mb: 6,
+                            mb: { xs: 4, md: 6 },
                             fontWeight: 700,
                             color: theme.palette.text.primary,
                             position: 'relative',
                             '&::after': {
                                 content: '""',
                                 display: 'block',
-                                width: '80px',
+                                width: { xs: '64px', md: '80px' },
                                 height: '4px',
                                 background: theme.palette.primary.main,
-                                margin: '20px auto 0',
+                                margin: { xs: '14px auto 0', md: '20px auto 0' },
                                 borderRadius: '2px'
                             }
                         }}
@@ -113,8 +113,8 @@ const Contact = () => {
                     </Typography>
                 </motion.div>
 
-                <Grid container spacing={6} justifyContent="center" alignItems="center">
-                    <Grid item xs={12} md={6}>
+                <Grid container spacing={{ xs: 3, sm: 4, md: 6 }} justifyContent="center" alignItems="stretch">
+                    <Grid item xs={12} md={8} lg={7}>
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -124,17 +124,25 @@ const Contact = () => {
                             <Paper 
                                 elevation={3} 
                                 sx={{ 
-                                    p: 4, 
+                                    p: { xs: 2.5, sm: 3.5, md: 4 }, 
                                     borderRadius: '16px',
                                     background: theme.palette.background.default,
                                     height: '100%'
                                 }}
                             >
-                                <Typography variant="h4" component="h3" gutterBottom sx={{ mb: 4 }}>
+                                <Typography
+                                    variant="h4"
+                                    component="h3"
+                                    gutterBottom
+                                    sx={{
+                                        mb: { xs: 2.5, sm: 3, md: 4 },
+                                        fontSize: { xs: '1.4rem', sm: '1.7rem', md: '2rem' }
+                                    }}
+                                >
                                     Contact Information
                                 </Typography>
                                 
-                                <Grid container spacing={3}>
+                                <Grid container spacing={{ xs: 2, sm: 2.5, md: 3 }}>
                                     {contactItems.map((item, index) => (
                                         <Grid item xs={12} key={index}>
                                             <motion.div
@@ -143,28 +151,56 @@ const Contact = () => {
                                             >
                                                 <Box
                                                     sx={{
-                                                        p: 3,
+                                                        p: { xs: 2, sm: 2.5, md: 3 },
                                                         borderRadius: '12px',
                                                         backgroundColor: `${item.color}10`,
                                                         display: 'flex',
-                                                        alignItems: 'center',
+                                                        alignItems: { xs: 'flex-start', sm: 'center' },
+                                                        flexDirection: { xs: 'column', sm: 'row' },
                                                         width: '100%'
                                                     }}
                                                 >
                                                     <Avatar sx={{ 
                                                         bgcolor: item.color, 
                                                         color: 'white',
-                                                        mr: 3,
-                                                        width: 56,
-                                                        height: 56
+                                                        mr: { xs: 0, sm: 2.5 },
+                                                        mb: { xs: 1.25, sm: 0 },
+                                                        width: { xs: 48, sm: 52, md: 56 },
+                                                        height: { xs: 48, sm: 52, md: 56 }
                                                     }}>
                                                         {item.icon}
                                                     </Avatar>
-                                                    <Box>
+                                                    <Box sx={{ minWidth: 0 }}>
                                                         <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
                                                             {item.title}
                                                         </Typography>
-                                                        {item.content}
+                                                        {typeof item.content === 'string' ? (
+                                                            <Typography variant="body1" sx={{ color: theme.palette.text.primary, wordBreak: 'break-word' }}>
+                                                                {item.content}
+                                                            </Typography>
+                                                        ) : (
+                                                            item.content
+                                                        )}
+                                                        {item.action && (
+                                                            <Button
+                                                                component="a"
+                                                                href={item.action}
+                                                                size="small"
+                                                                sx={{
+                                                                    mt: 1,
+                                                                    px: 0,
+                                                                    minWidth: 'auto',
+                                                                    fontWeight: 700,
+                                                                    color: item.color,
+                                                                    '&:hover': {
+                                                                        background: 'transparent',
+                                                                        textDecoration: 'underline'
+                                                                    }
+                                                                }}
+                                                            >
+                                                                Reach via {item.title}
+                                                            </Button>
+                                                        )}
                                                     </Box>
                                                 </Box>
                                             </motion.div>
@@ -176,12 +212,13 @@ const Contact = () => {
                                     Connect With Me
                                 </Typography>
                                 
-                                <Box sx={{ display: 'flex', gap: 2 }}>
+                                <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap' }}>
                                     {socialLinks.map((social, index) => (
                                         <motion.div
                                             key={index}
                                             whileHover={{ scale: 1.1 }}
                                             whileTap={{ scale: 0.9 }}
+                                            style={{ flex: '1 1 140px' }}
                                         >
                                             <Button
                                                 href={social.url}
@@ -189,10 +226,13 @@ const Contact = () => {
                                                 rel="noopener"
                                                 variant="outlined"
                                                 sx={{
-                                                    minWidth: 'auto',
-                                                    p: 2,
+                                                    minWidth: { xs: '100%', sm: 'auto' },
+                                                    width: '100%',
+                                                    p: { xs: 1.25, sm: 1.5, md: 2 },
                                                     borderRadius: '12px',
                                                     borderColor: `${social.color}30`,
+                                                    justifyContent: { xs: 'flex-start', sm: 'center' },
+                                                    gap: 1,
                                                     '&:hover': {
                                                         borderColor: social.color,
                                                         backgroundColor: `${social.color}10`
@@ -202,11 +242,14 @@ const Contact = () => {
                                                 <Avatar sx={{ 
                                                     bgcolor: `${social.color}20`, 
                                                     color: social.color,
-                                                    width: 48,
-                                                    height: 48
+                                                    width: { xs: 38, sm: 42, md: 48 },
+                                                    height: { xs: 38, sm: 42, md: 48 }
                                                 }}>
                                                     {social.icon}
                                                 </Avatar>
+                                                <Typography variant="body2" sx={{ fontWeight: 600, color: theme.palette.text.primary }}>
+                                                    {social.name}
+                                                </Typography>
                                             </Button>
                                         </motion.div>
                                     ))}
