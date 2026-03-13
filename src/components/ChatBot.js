@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   Box,
-  Fab,
   Paper,
   Typography,
   TextField,
@@ -9,7 +8,7 @@ import {
   Chip
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import ChatIcon from "@mui/icons-material/Chat";
+import SmartToyRoundedIcon from "@mui/icons-material/SmartToyRounded";
 import SendIcon from "@mui/icons-material/Send";
 
 // FAQ data
@@ -17,7 +16,7 @@ const faq = {
   hello: "Hello! 👋 I'm Ashen's portfolio assistant. How can I help you?",
   name: "My name is Ashen Wishwa Geeth. I am a Full-Stack Software Developer who enjoys building modern web and mobile applications.",
   skills:
-    "Ashen's technical skills include React.js, React Native, Flutter, Expo, JavaScript, TypeScript, Java, Go (Gin), Spring Boot, HTML, CSS, and REST API development.",
+    "Ashen's technical skills include Laravel,React.js, React Native, Flutter, Expo, JavaScript, TypeScript, Java, Go (Gin), Spring Boot, HTML, CSS, and REST API development.",
   technologies:
     "Ashen works with many technologies including Firebase, Supabase (PostgreSQL), MySQL, SQLite, Git, GitHub, Java Swing, JDBC, and modern UI libraries like Material UI.",
   projects:
@@ -116,22 +115,87 @@ const ChatBot = () => {
   return (
     <>
       {/* Chat Icon (FAB) always visible */}
-      <Fab
-        color="primary"
-        sx={{ position: "fixed", bottom: 30, right: 30, zIndex: 1100 }}
+      <Box
+        component="button"
+        type="button"
+        aria-label="Open portfolio chatbot"
         onClick={() => setShowChat(true)}
+        sx={{
+          position: "fixed",
+          right: { xs: 16, sm: 24, md: 30 },
+          bottom: { xs: 16, sm: 24, md: 30 },
+          zIndex: 1100,
+          display: "flex",
+          alignItems: "center",
+          gap: 1.2,
+          pl: { xs: 1.25, sm: 1.6 },
+          pr: 1,
+          py: 1,
+          border: "none",
+          borderRadius: "999px",
+          cursor: "pointer",
+          background: "linear-gradient(135deg, #1565c0 0%, #42a5f5 100%)",
+          color: "#ffffff",
+          boxShadow: "0 14px 34px rgba(21, 101, 192, 0.28)",
+          transform: "translateY(0) scale(1)",
+          animation: "chatBotFloatIn 650ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+          transition:
+            "transform 180ms ease, box-shadow 180ms ease, background 180ms ease",
+          "&:hover": {
+            background: "linear-gradient(135deg, #0d47a1 0%, #1e88e5 100%)",
+            transform: "translateY(-2px) scale(1.05)",
+            boxShadow: "0 18px 38px rgba(13, 71, 161, 0.34)"
+          },
+          "&:focus-visible": {
+            outline: "3px solid rgba(66, 165, 245, 0.35)",
+            outlineOffset: 3
+          },
+          "@keyframes chatBotFloatIn": {
+            "0%": {
+              opacity: 0,
+              transform: "translateY(20px) scale(0.9)"
+            },
+            "100%": {
+              opacity: 1,
+              transform: "translateY(0) scale(1)"
+            }
+          }
+        }}
       >
-        <ChatIcon />
-      </Fab>
+        <Typography
+          sx={{
+            fontSize: { xs: "0.84rem", sm: "0.95rem" },
+            fontWeight: 700,
+            lineHeight: 1,
+            letterSpacing: "0.01em",
+            whiteSpace: "nowrap"
+          }}
+        >
+          Ask Me
+        </Typography>
+        <Box
+          sx={{
+            width: { xs: 42, sm: 48 },
+            height: { xs: 42, sm: 48 },
+            borderRadius: "50%",
+            display: "grid",
+            placeItems: "center",
+            backgroundColor: "rgba(255, 255, 255, 0.18)",
+            boxShadow: "inset 0 1px 0 rgba(255, 255, 255, 0.2)"
+          }}
+        >
+          <SmartToyRoundedIcon sx={{ fontSize: { xs: 22, sm: 26 } }} />
+        </Box>
+      </Box>
 
       {showChat && (
         <Paper
           elevation={6}
           sx={{
             position: "fixed",
-            bottom: 100,
-            right: 30,
-            width: 350,
+            bottom: { xs: 76, sm: 94, md: 100 },
+            right: { xs: 16, sm: 24, md: 30 },
+            width: { xs: "calc(100vw - 32px)", sm: 350 },
             height: 450,
             display: "flex",
             flexDirection: "column",
